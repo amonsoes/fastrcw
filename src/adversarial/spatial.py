@@ -25,7 +25,6 @@ class AttackLoader:
                 dataset_type, 
                 model_trms,
                 surrogate_model_trms,
-                hpf_mask_params,
                 input_size,
                 jpeg_compr_obj=None,
                 *args, 
@@ -37,9 +36,9 @@ class AttackLoader:
         self.surrogate_model = self.get_model(surrogate_model)
         self.surrogate_model_trms = surrogate_model_trms
         self.jpeg_compr_obj = jpeg_compr_obj
-        self.attack = self.load_attack(attack_type, hpf_mask_params, input_size, *args, **kwargs)
+        self.attack = self.load_attack(attack_type, input_size, *args, **kwargs)
         
-    def load_attack(self, attack_type, hpf_mask_params, input_size, *args, **kwargs):
+    def load_attack(self, attack_type, input_size, *args, **kwargs):
         # legacy
         hpf_masker = None
         # load white or black box

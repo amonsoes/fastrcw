@@ -281,7 +281,6 @@ class IMGTransforms:
         return transform_train_adv, transform_val_adv
         
 
-
 class AdversarialAttackTransform:
     
     def __init__(self, trm_bypass, dataset_type, attack_transform=None):
