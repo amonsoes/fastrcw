@@ -308,10 +308,6 @@ class Logger:
                     f.write(f'init_method : {self.adversarial_opt.spatial_attack_params.init_method}\n')
                 f.write(f'attack_compression : {self.adversarial_opt.attack_compression}\n')
                 f.write(f'compression_rate : {self.adversarial_opt.compression_rate[0]}\n')
-                if self.adversarial_opt.spatial_attack_params.hpf_mask_params != None:
-                    f.write(f'use_sal_mask : {self.adversarial_opt.spatial_attack_params.hpf_mask_params["use_sal_mask"]}\n')
-                    f.write(f'sal_mask_only : {self.adversarial_opt.spatial_attack_params.hpf_mask_params["sal_mask_only"]}\n')
-                    f.write(f'lf_boosting : {self.adversarial_opt.spatial_attack_params.hpf_mask_params["lf_boosting"]}\n')
                 if hasattr(self.adversarial_opt.spatial_attack_params, 'gaussian'):
                     f.write(f'gaussian : {self.adversarial_opt.spatial_attack_params.gaussian}\n')
                     if self.adversarial_opt.spatial_attack_params.gaussian:
