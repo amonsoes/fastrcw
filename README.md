@@ -45,7 +45,7 @@ Download the datasets for the specified sources.
 
 (3) **Data set-up**
 
-Download the dataset and place it in a folder called 'data' in the root of the repository.
+Download the dataset and place it in a folder called 'data' in the root of the repository. the tree to the data should look like this './data/nips17/'
 
 (4) **Pretrained model set-up**
 

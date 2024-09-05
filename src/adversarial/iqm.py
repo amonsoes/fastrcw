@@ -2,7 +2,6 @@ import torch
 import csv
 
 from math import log10
-from src.adversarial.hpf_mask import HpfDWT
 from IQA_pytorch import MAD, SSIM
 from torch.nn import functional as F
 from DISTS_pytorch import DISTS
@@ -129,53 +128,4 @@ class PSNR(torch.nn.Module):
         mse_score = self.mse(X, Y)
         psnr_score = 20*log10(1) - 10*torch.log10((mse_score/3)/224)
         return psnr_score
-    
-    
-class HPFL2(torch.nn.Module):
-    
-    def __init__(self, channels=3):
-    
-        super(HPFL2, self).__init__()
-        self.mse = torch.nn.MSELoss()
-        self.ig_size = None
-
-    def forward(self, X, Y, mask):
-        assert X.shape == Y.shape
-        score = self.mask_guided_L2(X, Y, mask)
-        return score
-    
-    def mask_guided_L2(self, X, Y, mask):
-        """
-        This method computes MSE and weights differences based on a mask
-
-        Args:
-            X : torch.Tensor target  
-            Y : torch.Tensor reference
-            mask : mask holding coefficients for weighting
-        """
-        if self.ig_size == None:
-            self.ig_size = X.numel()
-        diff = torch.square(X - Y)
-        diff = diff * mask # weight differences by mask
-        return diff.sum() / self.ig_size
-        
-class DWTL2(torch.nn.Module):
-    
-    # take L2 on the LL band only
-    
-    def __init__(self, device, wavelet_type='db2',n_dwt=1,targeted=False):
-    
-        super(DWTL2, self).__init__()
-        self.device = device
-        self.hpf_dwt = HpfDWT(device, 
-                            wavelet_type=wavelet_type,
-                            n_dwt=n_dwt,
-                            targeted=targeted)
-        self.mse = torch.nn.MSELoss()
-        self.ig_size = None
-
-    def forward(self, X_ll, Y_ll):
-        assert X_ll.shape == Y_ll.shape
-        score = self.mse(X_ll, Y_ll)
-        return score
     
