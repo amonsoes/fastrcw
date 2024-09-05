@@ -36,7 +36,6 @@ class RCW(CW):
         """
         super().__init__(model, model_trms, *args, **kwargs)
         self.compression_lower_bound = rcw_comp_lower_bound
-        self.hpf_dwt = HpfDWT(device=self.device)
         self.original_c = self.c
         self.cqe_log = {}
         
