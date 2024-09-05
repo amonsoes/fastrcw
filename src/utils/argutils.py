@@ -170,7 +170,8 @@ def adversarial_setup(args, filename):
         adversarial_opt.surrogate_model_params = surrogate_model_params
         if adversarial_opt.spatial_adv_type not in ['fgsm',
                                                     'cw',
-                                                    'rcw']:
+                                                    'rcw',
+                                                    'far']:
             spatial_attack_params.alpha = args.alpha
         if adversarial_opt.spatial_adv_type == 'far':
             spatial_attack_params.eta = args.eta
