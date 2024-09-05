@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 from random import randint
 from diff_jpeg import diff_jpeg_coding
-from src.adversarial.custom_cw import CW, HpfDWT
+from src.adversarial.custom_cw import CW
 from torchvision.io import encode_jpeg, decode_image
 
 
