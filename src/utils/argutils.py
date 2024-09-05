@@ -196,7 +196,7 @@ def adversarial_setup(args, filename):
                 spatial_attack_params.target_mode = args.target_mode
         if adversarial_opt.spatial_adv_type == 'far':
                 spatial_attack_params.far_jpeg_quality = args.far_jpeg_quality
-
+        adversarial_opt.spatial_attack_params = spatial_attack_params
     if filename == 'run_pretrained.py':
         input_size = 299 if args.model_name == 'xception' else 224
         adversarial_opt.input_size = input_size   
