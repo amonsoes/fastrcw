@@ -1,9 +1,6 @@
-import torch
 
-# Standard libraries
 import itertools
 import numpy as np
-# PyTorch
 import torch
 import torch.nn as nn
 

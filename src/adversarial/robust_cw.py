@@ -8,6 +8,13 @@ from diff_jpeg import diff_jpeg_coding
 from src.adversarial.custom_cw import CW
 from torchvision.io import encode_jpeg, decode_image
 
+#############################
+#
+# FastRCW code written by A. S.
+# Base Provided by Carlini et al. (2017)
+#
+#############################
+
 
 
 class RCW(CW):

@@ -2,8 +2,8 @@
 # original CW class is transferred from the torchattacks library
 # https://adversarial-attacks-pytorch.readthedocs.io/en/latest/
 #
-# Adjusted by Amon Soares de Souza
-# All other classes by Amon Soares de Souza 
+# Adjusted by A. S.
+# All other classes by A. S. 
 ####################################################
 
 import torch

@@ -11,6 +11,7 @@ from src.adversarial.jpeg_ifgm import DiffJPEG
 #######################################
 #
 ##  Fast Adversarial Rounding
+##  Pytorch Version written by A. S.
 #
 ######################################
 
