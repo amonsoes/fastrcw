@@ -45,12 +45,12 @@ Download the datasets for the specified sources.
 
 (3) **Data set-up**
 
-Download the dataset and place it in a folder called 'data' in the root of the repository. the tree to the data should look like this './data/nips17/'
+Download the dataset and place it in a folder called 'data' in the root of the repository. The tree to the data set should look like this './data/nips17/'
 
 (4) **Pretrained model set-up**
 
 Pretrained models can be downloaded [here](https://drive.google.com/drive/folders/1G1WvO9NylgV6aUKNEjoatv073KGpM8mk?usp=sharing).
-Put downloaded folder in a folder './saves'.
+Put the downloaded folder in the folder './saves/'.
 
 (5) **Extend torchattacks and other modules**
 
